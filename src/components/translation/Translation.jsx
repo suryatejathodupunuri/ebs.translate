@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Transliteration = () => {
+const Translation = () => {
   // eslint-disable-next-line
   const [file, setFile] = useState(null);
   const [fileContent, setFileContent] = useState("");
@@ -46,7 +46,7 @@ const Transliteration = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/transliterate", {
+      const response = await fetch("http://127.0.0.1:5000/translate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -108,6 +108,7 @@ const Transliteration = () => {
               <option value="asm">Assamese</option>
               <option value="ben">Bengali</option>
               <option value="bod">Bodo</option>
+              <option value="eng">English</option>
               <option value="guj">Gujarati</option>
               <option value="hin">Hindi</option>
               <option value="kan">Kannada</option>
@@ -117,7 +118,6 @@ const Transliteration = () => {
               <option value="nep">Nepali</option>
               <option value="ori">Oriya</option>
               <option value="pan">Punjabi</option>
-              <option value="eng">Roman(Eng)</option>
               <option value="tam">Tamil</option>
               <option value="tel">Telugu</option>
               <option value="urd">Urdu</option>
@@ -164,6 +164,7 @@ const Transliteration = () => {
               <option value="asm">Assamese</option>
               <option value="ben">Bengali</option>
               <option value="bod">Bodo</option>
+              <option value="eng">English</option>
               <option value="guj">Gujarati</option>
               <option value="hin">Hindi</option>
               <option value="kan">Kannada</option>
@@ -173,7 +174,6 @@ const Transliteration = () => {
               <option value="nep">Nepali</option>
               <option value="ori">Oriya</option>
               <option value="pan">Punjabi</option>
-              <option value="eng">Roman(Eng)</option>
               <option value="tam">Tamil</option>
               <option value="tel">Telugu</option>
               <option value="urd">Urdu</option>
@@ -254,7 +254,7 @@ const Transliteration = () => {
               fontFamily: isUrdu_o ? "Nafees Web Naskh, sans-serif" : "inherit",
             }}
             className="w-full h-80 border p-4"
-            placeholder="Transliterated text will appear here upon clicking submit."
+            placeholder="Translated text will appear here upon clicking submit."
             value={responseData}
             onChange={(e) => setResponseData(e.target.value)}
           />
@@ -264,4 +264,4 @@ const Transliteration = () => {
   );
 };
 
-export default Transliteration;
+export default Translation;

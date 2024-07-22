@@ -1,9 +1,9 @@
 import React from 'react';
-import Transliteration from '../transliteration/Transliteration';
+import Translation from '../translation/Translation';
 
 function TryNow() {
   return (
-    <Transliteration></Transliteration>
+    <Translation></Translation>
   );
 }
 
